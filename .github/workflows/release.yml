@@ -1,0 +1,21 @@
+name: Greet Everyone
+# This workflow is triggered on pushes to the repository.
+on: [push]
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: My first step
+        uses: docker://ubuntu:latest
+        run: curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+      # This step prints a
+      # - name: Upload release
+      #   uses: yakuhzi/action-release@v1
+      #   with:
+      #     file: /path/to/asset.ext
+      #     changelog: /path/to/CHANGELOG.txt
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}n output (time) from the previous step's action.
+
